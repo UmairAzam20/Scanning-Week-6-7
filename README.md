@@ -125,17 +125,68 @@ Identify the operating systems of hosts based on TTL values in captured packets.
 
 * TTL = 64 → likely Linux / Unix-based host.
   
-![Nmap Scan Results](screenshot/CODEEE.png)
+![Nmap Scan Results](screenshot/LAB1.png)
 
 * TTL = 128 → likely Windows host.
 
-![Nmap Scan Results](screenshot/CODEEE.png)
+![Nmap Scan Results](screenshot/LAB3.png)
 
 
 * TTL = 255 → likely router or network appliance.
 
-![Nmap Scan Results](screenshot/CODEEE.png)
+![Nmap Scan Results](screenshot/LAB2.png)
   
 **Conclusion**
 
 TTL fingerprinting confirms the OS families present and supports the vulnerability assessment.
+
+## Question 5: Nessus Vulnerability Analysis – Ghostcat
+
+**Objective**
+
+Assess the impact of the Ghostcat vulnerability (CVE-2020-1938) on the target environment.
+
+**Findings**
+
+* Nessus detected Ghostcat on port 8009.
+* CVSS score: 9.8 (Critical).
+* Apache Tomcat AJP connector exposure can lead to remote disclosure or RCE.
+
+**Recommended Remediation**
+
+* Disable the AJP connector if it is unused.
+* Patch Apache Tomcat immediately.
+* Restrict access to port 8009 to trusted hosts only.
+
+*Port & IP Address*
+
+![Nmap Scan Results](screenshot/nessusghost.png)
+
+*Vulnerablities Finding*
+
+![Nmap Scan Results](screenshot/nessusghostcat.png)
+
+*Vulnerablities Information*
+
+![Nmap Scan Results](screenshot/nessusghostcatfinale.png)
+
+## Summary & Conclusion
+
+This assessment provides a clear, structured analysis of multiple attack vectors and supports immediate remediation.
+
+**Key Results**
+
+* Question 1: Flag recovered via ICMP and Base64: SUCTF2023{ai_is_cool}
+* Question 2: Multi-stage decoding produced: SUCTF2023{EXMACHINAAVA}
+* Question 3: Port 445 is the highest priority risk.
+* Question 4: TTL values identified host OS families.
+* Question 5: Ghostcat on port 8009 is critical.
+
+  
+**Recommendations**
+
+* Patch outdated services and replace unsupported systems.
+* Harden exposed services: SMB, FTP, HTTP, SSH.
+* Restrict network access and close unused ports.
+* Deploy IDS/IPS and continuous monitoring.
+* Enforce strong authentication, logging, and segmentation.
