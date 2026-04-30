@@ -23,7 +23,10 @@ Encoded string: U1VCVEVYDYt2e2FpX21zX2Nvb30=
 
 Decoded flag: SUCTF2023{ai_is_cool}
 
+WireShark ICMP Finding
 
 ![Nmap Scan Results](screenshot/packet1.png)
+
+Base64 decoded
 
 ![Nmap Scan Results](screenshot/packet1%20flag.png)
