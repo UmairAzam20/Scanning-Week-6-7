@@ -8,14 +8,14 @@ This document provides a structured security assessment across network packet an
 Extract the hidden flag from packet1.pcap using packet capture analysis and Base64 decoding.
 
 **Methodology**
-1. Inspect ICMP traffic in Wireshark.
-2. Confirm host reachability and TTL behavior.
-3. Extract the encoded payload, then decode it.
+* Inspect ICMP traffic in Wireshark.
+* Confirm host reachability and TTL behavior.
+* Extract the encoded payload, then decode it.
 
 **Findings**
-1. ICMP echo requests and replies were successfully observed.
-2. TTL values confirmed the target host responded correctly.
-3. An encoded payload string was recovered from the packet.
+* ICMP echo requests and replies were successfully observed.
+* TTL values confirmed the target host responded correctly.
+* An encoded payload string was recovered from the packet.
    
 **Result**
 
@@ -30,3 +30,18 @@ Decoded flag: SUCTF2023{ai_is_cool}
 *Base64 decoded*
 
 ![Nmap Scan Results](screenshot/packet1%20flag.png)
+
+
+## 2. Question 2: FTP Traffic & Cipher Decoding
+
+**Objective**
+
+Analyze packet2.pcap to recover the final flag using FTP data extraction and multi-stage decoding.
+
+**Methodology**
+
+* Confirm host availability via ICMP.
+* Capture FTP traffic and export relevant files.
+* Expand shortened URLs or clues.
+* Decode the identified cipher system.
+* Perform final Base64 decoding.
