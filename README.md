@@ -93,3 +93,49 @@ Interpret Nmap scan results to identify exposed services, risk levels, and poten
 | 80/tcp   | open  | hBp          | Apache 2.2.8                               |
 | 139/tcp  | open  | netbios-ssn  |                                            |
 | 445/tcp  | open  | microso6-ds  | Windows 7 Professional 7601 Service Pack 1 |
+
+
+**Risk Assessment**
+
+| Port          | Service                | Attacker Capability                                                                                                     |
+|---------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| 21 (FTP)      | vsftpd 2.3.4           | Upload/download files, brute force credentials, exploit known vulnerabilities (backdoor, buffer overflow)               |
+| 22 (SSH)      | OpenSSH 5.3p1          | Brute force login, if credentials gained → remote shell access                                                          |
+| 80 (HTTP)     | Apache 2.2.8           | Web application attacks (SQLi, XSS, LFI), directory traversal, known Apache exploits                                    |
+| 139/445 (SMB) | Windows 7 SP1          | Enumerate shares, brute force SMB credentials, exploit EternalBlue (MS17‑010), pass the hash, remote code execution     |
+
+
+**Known Vulnerabilities**
+
+| Service & Version       | Known Vulnerabilities (CVEs)                                                                                             |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| vsftpd 2.3.4            | Backdoor command (CVE-2011-2523) – port 6200 opens with root shell; also smurf attack, denial of service                 |
+| OpenSSH 5.3p1           | Older version – vulnerable to CVE-2016-6210 (user enumeration), CVE-2008-5161 (cipher downgrade), possibly CVE-2014-2532 (bypass) |
+| Apache 2.2.8            | Many vulnerabilities: CVE-2017-3167 (auth bypass), CVE-2011-3368 (mod_proxy reverse proxy), CVE-2009-3555 (TLS renegotiation), etc. |
+| Windows 7 SP1 (SMB)     | Highly vulnerable to EternalBlue (CVE-2017-0144) – unauthenticated remote code execution, CVE-2017-0143 to CVE-2017-0148, also MS08-067 if older |
+
+
+## 4. Question 4: OS Fingerprinting via TTL
+
+**Objective**
+
+Identify the operating systems of hosts based on TTL values in captured packets.
+
+**TTL Fingerprinting**
+
+* TTL = 64 → likely Linux / Unix-based host.
+  
+![Nmap Scan Results](screenshot/CODEEE.png)
+
+* TTL = 128 → likely Windows host.
+
+![Nmap Scan Results](screenshot/CODEEE.png)
+
+
+* TTL = 255 → likely router or network appliance.
+
+![Nmap Scan Results](screenshot/CODEEE.png)
+  
+**Conclusion**
+
+TTL fingerprinting confirms the OS families present and supports the vulnerability assessment.
