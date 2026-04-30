@@ -76,3 +76,20 @@ Analyze packet2.pcap to recover the final flag using FTP data extraction and mul
 *PigPen Cipher Decode: Tic Tac Toe*
 
 ![Nmap Scan Results](screenshot/CODEEE.png)
+
+
+## Question 3: Nmap Output Interpretation
+
+**Objective**
+
+Interpret Nmap scan results to identify exposed services, risk levels, and potential attack vectors.
+
+**Nmap Scan** 
+
+| PORT     | STATE | SERVICE      | VERSION                                    |
+|----------|-------|--------------|--------------------------------------------|
+| 21/tcp   | open  | 6p           | vs6pd 2.3.4                                |
+| 22/tcp   | open  | ssh          | OpenSSH 5.3p1                              |
+| 80/tcp   | open  | hBp          | Apache 2.2.8                               |
+| 139/tcp  | open  | netbios-ssn  |                                            |
+| 445/tcp  | open  | microso6-ds  | Windows 7 Professional 7601 Service Pack 1 |
