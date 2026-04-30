@@ -19,4 +19,5 @@ Extract the hidden flag from packet1.pcap using packet capture analysis and Base
    
 **Result**
 Encoded string: U1VCVEVYDYt2e2FpX21zX2Nvb30=
+
 Decoded flag: SUCTF2023{ai_is_cool}
