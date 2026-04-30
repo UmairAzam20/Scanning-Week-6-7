@@ -45,3 +45,34 @@ Analyze packet2.pcap to recover the final flag using FTP data extraction and mul
 * Expand shortened URLs or clues.
 * Decode the identified cipher system.
 * Perform final Base64 decoding.
+
+**Decoding Process**
+
+* Confirmed FTP host communication and extracted evidence.
+* Expanded the TinyURL clue to reveal the hidden text.
+* Decoded the Pigpen / Tic-Tac-Toe cipher.
+* Applied Base64 decoding to obtain the final flag.
+
+  
+**Result**
+
+* Pigpen output: EXMACHINAAVA
+* Final flag: SUCTF2023{EXMACHINAAVA}
+
+
+*WireShark FTP Finding*
+
+![Nmap Scan Results](screenshot/pcket2.png)
+
+
+*FTP Evindence*
+
+![Nmap Scan Results](screenshot/pcket2step2.png)
+
+*URL Evindence*
+
+![Nmap Scan Results](screenshot/pcket2step3.png)
+
+*PigPen Cipher Decode: Tic Tac Toe*
+
+![Nmap Scan Results](screenshot/CODEEE.png)
