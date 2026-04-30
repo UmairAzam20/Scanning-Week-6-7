@@ -18,6 +18,12 @@ Extract the hidden flag from packet1.pcap using packet capture analysis and Base
 3. An encoded payload string was recovered from the packet.
    
 **Result**
+
 Encoded string: U1VCVEVYDYt2e2FpX21zX2Nvb30=
 
 Decoded flag: SUCTF2023{ai_is_cool}
+
+
+![Nmap Scan Results](screenshot/packet1.png)
+
+![Nmap Scan Results](screenshot/packet1%20flag.png)
